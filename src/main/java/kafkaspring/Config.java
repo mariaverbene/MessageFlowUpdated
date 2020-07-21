@@ -76,7 +76,7 @@ public class Config {
                 .requestPayloadType(Person.class)
                 .requestMapping(m -> m.methods(HttpMethod.POST)))
             .handle(Kafka.outboundChannelAdapter(new DefaultKafkaProducerFactory<>(kafkaProperties.buildProducerProperties())).topic(configProperties.getTopicFrom()))
-            .get();
+            .get(); //
     }
 
 }
